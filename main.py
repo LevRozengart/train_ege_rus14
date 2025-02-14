@@ -3,7 +3,6 @@ import json
 
 with open("bd.json", encoding="utf-8") as file:
     json_lst = json.load(file)
-    print(json_lst)
 correct_ans = 0
 incorrect_ans = 0
 answers = {0: "слитно", 1: "раздельно"}
