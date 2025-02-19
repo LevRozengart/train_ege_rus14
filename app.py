@@ -19,7 +19,7 @@ async def get_word():
     n = random.randint(0, 1)
     n_word = random.randint(0, len(json_lst[n][str(n)]) - 1)
     current_word = json_lst[n][str(n)][n_word]
-    with open("huy.json", "w", encoding="utf-8") as file:
+    with open("temp.json", "w", encoding="utf-8") as file:
         json.dump({"word": current_word, "right_var": n}, file, indent=2, ensure_ascii=False)
     return {"word": current_word}
 
@@ -27,7 +27,7 @@ async def get_word():
 async def main_task(answer: SDrop):
     model_ans = {"Слитно": 0, "Раздельно": 1}
     naob = {0: "Слитно", 1: "Раздельно"}
-    with open("huy.json", encoding="utf-8") as file:
+    with open("temp.json", encoding="utf-8") as file:
         data_word = json.load(file)
     right_var = data_word["right_var"]
     word = data_word["word"]
